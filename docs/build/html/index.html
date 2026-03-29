@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fasta Reader documentation &#8212; документация Fasta Reader 1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=279e0f84" />
+    <script src="_static/documentation_options.js?v=47a0e12c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/translations.js?v=cd1d70c9"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">документация Fasta Reader 1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fasta Reader documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="fasta-reader-documentation">
+<h1>Fasta Reader documentation<a class="headerlink" href="#fasta-reader-documentation" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Программа от Никиты Курочкина, содержит два класса:</p>
+<dl class="py class" id="module-FastaReader">
+<dt class="sig sig-object py" id="FastaReader.FastaReader">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">FastaReader.</span></span><span class="sig-name descname"><span class="pre">FastaReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.FastaReader" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс для чтения формата .fasta, создания записей из объектов класса Seq.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Путь к файлу .fasta. Задаётся пользователем.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="FastaReader.FastaReader.__format_check">
+<span class="sig-name descname"><span class="pre">__format_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.FastaReader.__format_check" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет соответсвие формата заданного файла.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FastaReader.FastaReader.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.FastaReader.read" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Построчно читает файл и генерирует объекты Seq, если прошёл порверку формата.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="FastaReader.Seq">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">FastaReader.</span></span><span class="sig-name descname"><span class="pre">Seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.Seq" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс для представления биологической последовательности.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>head</strong> – Имя последовательности.</p></li>
+<li><p><strong>seq</strong> – Собсвенно последовательность.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="FastaReader.Seq.len">
+<span class="sig-name descname"><span class="pre">len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.Seq.len" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вычисляет длину последовательности и выводит в консоль результат.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FastaReader.Seq.seq_alphabet">
+<span class="sig-name descname"><span class="pre">seq_alphabet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.Seq.seq_alphabet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Определяет тип последовательности (нуклеотиды или протеины).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p>„Nucleotide“, если в последовательности встречаются только нуклеотиды, иначе „Protein“.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FastaReader.Seq.str">
+<span class="sig-name descname"><span class="pre">str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FastaReader.Seq.str" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Приводит последовательность к строковому виду.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Оглавление</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Fasta Reader documentation</a><ul>
+<li><a class="reference internal" href="#FastaReader.FastaReader"><code class="docutils literal notranslate"><span class="pre">FastaReader</span></code></a><ul>
+<li><a class="reference internal" href="#FastaReader.FastaReader.__format_check"><code class="docutils literal notranslate"><span class="pre">FastaReader.__format_check()</span></code></a></li>
+<li><a class="reference internal" href="#FastaReader.FastaReader.read"><code class="docutils literal notranslate"><span class="pre">FastaReader.read()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#FastaReader.Seq"><code class="docutils literal notranslate"><span class="pre">Seq</span></code></a><ul>
+<li><a class="reference internal" href="#FastaReader.Seq.len"><code class="docutils literal notranslate"><span class="pre">Seq.len()</span></code></a></li>
+<li><a class="reference internal" href="#FastaReader.Seq.seq_alphabet"><code class="docutils literal notranslate"><span class="pre">Seq.seq_alphabet()</span></code></a></li>
+<li><a class="reference internal" href="#FastaReader.Seq.str"><code class="docutils literal notranslate"><span class="pre">Seq.str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">документация Fasta Reader 1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fasta Reader documentation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Авторские права 2026, Курочкин Никита.
+      Создано с использованием <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    </div>
+  </body>
+</html>
